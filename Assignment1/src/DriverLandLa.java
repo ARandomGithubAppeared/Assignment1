@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class DriverLandLa {
 	
@@ -34,7 +35,18 @@ public class DriverLandLa {
 		}
 		
 		data1.showListing();
-
+		
+		
+		Scanner scan = new Scanner(System.in);
+		String buff;
+		int com;
+		while(scan.hasNext()){
+			buff=scan.nextLine();
+			buff=buff.trim();
+			com=buff.indexOf(",");
+			data1.addListing(new Listing(buff.substring(0, com-1),Integer.parseInt(buff.substring(com, buff.length()))));
+		}
+		data1.showListing();
 		
 	}
 
